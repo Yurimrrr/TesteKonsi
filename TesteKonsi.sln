@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "application", "application", "{00ECE930-5DB9-45F8-AB2E-D04FF0BB8B99}"
 	ProjectSection(SolutionItems) = preProject
 		testekonsi.dockerfile = testekonsi.dockerfile
+		testekonsi2.dockerfile = testekonsi2.dockerfile
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rabbitmq", "rabbitmq", "{A539219C-8739-4A64-8297-DEC5F5739D8A}"

@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using TesteKonsi.Application.Contracts;
 using TesteKonsi.Application.DTOs.Request;
+using TesteKonsi.Domain.Entities;
 using TesteKonsi.Domain.ValueObjects;
 using TesteKonsi.Domain.ValueObjects.Response.Benefits;
 
@@ -9,18 +11,19 @@ namespace TesteKonsi.WebApi.Controllers;
 [ApiController, Route("api/v1/benefits")]
 public class BenefitsController : ControllerBase
 {
-    private readonly IMediator _mediator;
+    private readonly IElasticSearch _elasticSearch;
 
-    public BenefitsController(IMediator mediator)
+    public BenefitsController(IElasticSearch elasticSearch)
     {
-        _mediator = mediator;
+        _elasticSearch = elasticSearch;
     }
 
     [HttpGet("")]
-    public async Task<BenefitsResponse?> GetBenefitByCpf([FromQuery] string cpf)
+    public async Task<UserBenefits?> GetBenefitByCpf([FromQuery] string cpf)
     {
-        var command = new BenefitsRequestDTO(cpf);
-        var result = await _mediator.Send(command);
+        cpf = cpf.Replace(".", "").Replace("-", "");
+        
+        var result = await _elasticSearch.GetUserBenefits(cpf); 
 
         return result;
     }

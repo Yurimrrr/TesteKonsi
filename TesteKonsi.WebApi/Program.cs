@@ -10,7 +10,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
+
+Console.WriteLine("CONFIGURATIONS ==========================================");
+Console.WriteLine(builder.Configuration.GetSection("RabbitMqConfigurations:HostName").Value);
+Console.WriteLine(builder.Configuration.GetSection("RabbitMqConfigurations:Port").Value);
+Console.WriteLine(builder.Configuration.GetSection("RabbitMqConfigurations:UserName").Value);
+Console.WriteLine(builder.Configuration.GetSection("RabbitMqConfigurations:Password").Value);
+Console.WriteLine("CONFIGURATIONS ==========================================");
+
 builder.Services.InjectDependencies(builder.Configuration);
+
 
 builder.Services
     .Configure<RabbitMqConfigurations>(
@@ -33,6 +42,14 @@ builder.Services
         builder
             .Configuration
             .GetSection((nameof(RedisConfigurations))
+            )
+    );
+
+builder.Services
+    .Configure<ElasticsearchConfigurations>(
+        builder
+            .Configuration
+            .GetSection((nameof(ElasticsearchConfigurations))
             )
     );
 
