@@ -20,11 +20,11 @@ public class CpfPublisherHostedService : BackgroundService
 
         for (int i = 0; i < 3; i++)
         {
-            // listCpfs.Add("343.228.350-40");
-            // listCpfs.Add("869.230.000-41");
-            // listCpfs.Add("568.946.870-30");
-            // listCpfs.Add("433.510.120-12");
-            // listCpfs.Add("415.022.590-79");
+            listCpfs.Add("343.228.350-40");
+            listCpfs.Add("869.230.000-41");
+            listCpfs.Add("568.946.870-30");
+            listCpfs.Add("433.510.120-12");
+            listCpfs.Add("415.022.590-79");
         }
 
         foreach (var cpf in listCpfs)
