@@ -1,0 +1,42 @@
+version: '2.2'
+services:
+  rabbitmq:
+    image: "rabbitmq:3.9-management"
+    hostname: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: "123456"
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - "./definitions.json:/etc/rabbitmq/definitions.json:ro"
+      - "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro"
+  redis:
+    image: redis:latest
+    command: redis-server --requirepass 123456
+    ports:
+      - "6379:6379"
+#  elasticsearch1:
+#    image: docker.elastic.co/elasticsearch/elasticsearch:7.13.4
+#    container_name: elasticsearch1
+#    environment:
+#      - cluster.name=docker-cluster
+#      - node.name=elasticsearch1
+#      - cluster.initial_master_nodes=elasticsearch1
+#      - bootstrap.memory_lock=true
+#      - http.cors.allow-origin=http://localhost:1358,[10](http://127.0.0.1:1358)
+#      - http.cors.enabled=true
+#      - http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization
+#      - http.cors.allow-credentials=true
+#      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+#    ulimits:
+#      memlock:
+#        soft: -1
+#        hard: -1
+#    volumes:
+#      - ./esdata1:/usr/share/elasticsearch/data
+#    ports:
+#      - 9200:9200
+networks:
+  app-network: {}
