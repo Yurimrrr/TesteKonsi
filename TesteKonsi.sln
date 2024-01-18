@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Git", "Git", "{647364A0-819
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteKonsi.Tests", "TesteKonsi.Tests\TesteKonsi.Tests.csproj", "{30B23528-5E6A-4C85-BA25-CFBBB3E4FAA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{07AB174B-DDC9-444E-871C-34276E55EDC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07AB174B-DDC9-444E-871C-34276E55EDC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07AB174B-DDC9-444E-871C-34276E55EDC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30B23528-5E6A-4C85-BA25-CFBBB3E4FAA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B23528-5E6A-4C85-BA25-CFBBB3E4FAA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30B23528-5E6A-4C85-BA25-CFBBB3E4FAA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B23528-5E6A-4C85-BA25-CFBBB3E4FAA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{00ECE930-5DB9-45F8-AB2E-D04FF0BB8B99} = {67C272F7-11A0-4B95-B5E5-FC393DBFB6BF}
