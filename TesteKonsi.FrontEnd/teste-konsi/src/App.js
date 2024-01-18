@@ -22,16 +22,29 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <div>
-          <input 
-            type="text" 
-            value={query} 
-            onChange={e => setQuery(e.target.value)} 
-            placeholder="Digite sua pesquisa aqui" 
-          />
-          <button onClick={searchAPI}>Pesquisar</button>
-          {data && <div>{JSON.stringify(data)}</div>}
+          <div className="divPesquisa">
+            <a>CPF:</a>
+            <input 
+              className='input'
+              type="text" 
+              value={query}
+              onChange={e => setQuery(e.target.value)} 
+              placeholder="Digite o CPF de pesquisa aqui" 
+            />
+            <button className='button' onClick={searchAPI}>Pesquisar</button>
+          </div>
+          
+          {
+            (data && data.benefits) && data.benefits.map((item, index) => (
+              <>
+                <div>
+                  <a>Código benéficio: {item.benefitTypeCode} - </a> <a>Número do benéficio: {item.benefitNumer} </a>
+                </div>
+              </>
+             ))
+          }
+
         </div>
       </header>
     </div>
