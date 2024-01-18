@@ -21,9 +21,11 @@ public class BenefitsController : ControllerBase
     [HttpGet("")]
     public async Task<UserBenefits?> GetBenefitByCpf([FromQuery] string cpf)
     {
-        cpf = cpf.Replace(".", "").Replace("-", "");
+        var _cpf = cpf.Replace(".", "").Replace("-", "");
         
-        var result = await _elasticSearch.GetUserBenefits(cpf); 
+        var result = await _elasticSearch.GetUserBenefits(_cpf);
+
+        result.Cpf = cpf;
 
         return result;
     }
