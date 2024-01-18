@@ -28,6 +28,7 @@ Os comandos levam em conta que esteja na raiz do projeto e a navegação segue o
   dotnet build
   dotnet run
 ```
+Para rodar o front-end é necessário o Node na versão LTS e o npm instalados na maquina.
 
 Em outro terminal também partindo da raiz:
 ### Iniciar o Front-end
